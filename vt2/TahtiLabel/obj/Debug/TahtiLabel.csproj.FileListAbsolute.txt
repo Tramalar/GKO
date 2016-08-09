@@ -1,0 +1,7 @@
+C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\ViikkoTehtävä2\TahtiLabel\bin\Debug\TahtiLabel.dll
+C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\ViikkoTehtävä2\TahtiLabel\bin\Debug\TahtiLabel.pdb
+C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\ViikkoTehtävä2\TahtiLabel\obj\Debug\TahtiLabel.csprojResolveAssemblyReference.cache
+C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\ViikkoTehtävä2\TahtiLabel\obj\Debug\TahtiLabel.dll
+C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\ViikkoTehtävä2\TahtiLabel\obj\Debug\TahtiLabel.pdb
+C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\ViikkoTehtävä2\TahtiLabel\obj\Debug\TahtiLabel.PaceLabel.resources
+C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\ViikkoTehtävä2\TahtiLabel\obj\Debug\TahtiLabel.csproj.GenerateResource.Cache

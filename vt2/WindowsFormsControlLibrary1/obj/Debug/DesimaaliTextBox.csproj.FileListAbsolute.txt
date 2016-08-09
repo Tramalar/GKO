@@ -1,0 +1,7 @@
+c:\users\v n\documents\visual studio 2015\Projects\Gekko\ViikkoTehtävä2\WindowsFormsControlLibrary1\bin\Debug\WindowsFormsControlLibrary1.dll
+c:\users\v n\documents\visual studio 2015\Projects\Gekko\ViikkoTehtävä2\WindowsFormsControlLibrary1\bin\Debug\WindowsFormsControlLibrary1.pdb
+c:\users\v n\documents\visual studio 2015\Projects\Gekko\ViikkoTehtävä2\WindowsFormsControlLibrary1\obj\Debug\WindowsFormsControlLibrary1.dll
+c:\users\v n\documents\visual studio 2015\Projects\Gekko\ViikkoTehtävä2\WindowsFormsControlLibrary1\obj\Debug\WindowsFormsControlLibrary1.pdb
+C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\ViikkoTehtävä2\WindowsFormsControlLibrary1\obj\Debug\DesimaaliTextBox.csprojResolveAssemblyReference.cache
+C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\ViikkoTehtävä2\WindowsFormsControlLibrary1\obj\Debug\DesimaaliTextBox.DecimalTextBox.resources
+C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\ViikkoTehtävä2\WindowsFormsControlLibrary1\obj\Debug\DesimaaliTextBox.csproj.GenerateResource.Cache

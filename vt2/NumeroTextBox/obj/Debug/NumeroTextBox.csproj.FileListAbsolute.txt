@@ -1,0 +1,5 @@
+C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\ViikkoTehtävä2\NumeroTextBox\bin\Debug\NumeroTextBox.dll
+C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\ViikkoTehtävä2\NumeroTextBox\bin\Debug\NumeroTextBox.pdb
+C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\ViikkoTehtävä2\NumeroTextBox\obj\Debug\NumeroTextBox.csprojResolveAssemblyReference.cache
+C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\ViikkoTehtävä2\NumeroTextBox\obj\Debug\NumeroTextBox.dll
+C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\ViikkoTehtävä2\NumeroTextBox\obj\Debug\NumeroTextBox.pdb

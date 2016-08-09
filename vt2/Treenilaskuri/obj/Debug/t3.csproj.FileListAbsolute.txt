@@ -1,0 +1,2 @@
+C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\vt2\Treenilaskuri\obj\Debug\Treenilaskuri.exe
+C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\vt2\Treenilaskuri\obj\Debug\Treenilaskuri.pdb
