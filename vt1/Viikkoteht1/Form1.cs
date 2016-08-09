@@ -37,10 +37,11 @@ namespace Viikkoteht1
         //ilmoittaa Undo-pinolle muutoksista ja tyhjentää Redo-pinon
         private void button1_Click(object sender, EventArgs e)
         {
-            String teksti = " "+lisattavaTeksti.Text.Trim()+" ";
+            String teksti = lisattavaTeksti.Text.Trim();
             if (!teksti.Equals("  "))
             {
                 Label lisattyTeksti = new Label();
+                lisattyTeksti.Padding = new Padding(3,3,3,3);
                 lisattyTeksti.BackColor = Color.Aqua;
                 lisattyTeksti.BorderStyle = BorderStyle.Fixed3D;
                 lisattyTeksti.Text = teksti;

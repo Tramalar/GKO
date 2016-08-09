@@ -7,3 +7,12 @@ c:\users\v n\documents\visual studio 2015\Projects\Gekko\Viikkoteht1\Viikkoteht1
 c:\users\v n\documents\visual studio 2015\Projects\Gekko\Viikkoteht1\Viikkoteht1\obj\Debug\Viikkoteht1.exe
 c:\users\v n\documents\visual studio 2015\Projects\Gekko\Viikkoteht1\Viikkoteht1\obj\Debug\Viikkoteht1.pdb
 c:\users\v n\documents\visual studio 2015\Projects\Gekko\Viikkoteht1\Viikkoteht1\obj\Debug\Viikkoteht1.AboutBox1.resources
+C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\vt1\Viikkoteht1\obj\Debug\Viikkoteht1.exe
+C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\vt1\Viikkoteht1\obj\Debug\Viikkoteht1.pdb
+C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\vt1\Viikkoteht1\obj\Debug\Viikkoteht1.csprojResolveAssemblyReference.cache
+C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\vt1\Viikkoteht1\obj\Debug\Viikkoteht1.AboutBox1.resources
+C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\vt1\Viikkoteht1\obj\Debug\Viikkoteht1.Form1.resources
+C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\vt1\Viikkoteht1\obj\Debug\Viikkoteht1.Properties.Resources.resources
+C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\vt1\Viikkoteht1\obj\Debug\Viikkoteht1.csproj.GenerateResource.Cache
+C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\vt1\Viikkoteht1\bin\Debug\Viikkoteht1.exe
+C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\vt1\Viikkoteht1\bin\Debug\Viikkoteht1.pdb
