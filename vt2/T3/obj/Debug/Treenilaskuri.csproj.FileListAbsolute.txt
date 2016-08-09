@@ -26,3 +26,5 @@ C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\vt2\Treenilaskuri\bin\D
 C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\vt2\Treenilaskuri\bin\Debug\AikaTextBox.pdb
 C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\vt2\Treenilaskuri\bin\Debug\NumeroTextBox.pdb
 C:\Users\V N\Documents\Visual Studio 2015\Projects\Gekko\vt2\Treenilaskuri\bin\Debug\TahtiLabel.pdb
+C:\Users\V N\Downloads\GKO-master\ vt 2\Treenilaskuri\obj\Debug\Treenilaskuri.exe
+C:\Users\V N\Downloads\GKO-master\ vt 2\Treenilaskuri\obj\Debug\Treenilaskuri.pdb
