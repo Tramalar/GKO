@@ -1,0 +1,142 @@
+﻿<Window x:Class="t3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:t3"
+        mc:Ignorable="d" 
+        x:Name="ikkuna"
+        Title="MainWindow" Height="350" Width="525">
+
+    <Window.Resources>
+        <!--asetetaan tyyli togglebuttoneille joita käytetään aakkosten esittämiseen ohjelmassa, toteutetaan sisäkkäisillä suorakulmioilla-->
+        <Style TargetType="ToggleButton">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Grid>
+                            <Rectangle Stroke="Black" Margin="0,0,0,0" Fill="Bisque"  x:Name="uloinreuna"/>
+                            <Rectangle Stroke="Black" Margin="7,7,7,7" Fill="Bisque"  x:Name="ulkoreuna"/>
+                            <Rectangle Stroke="Chocolate" Margin="8,8,8,8" StrokeThickness="4" Fill="Bisque" x:Name="painike"/>
+
+                            <Rectangle Stroke="Black" Margin="12,12,12,12" Fill="Bisque" x:Name="sisareuna"/>
+                            <!-- napin sisältö tekstiblokissa eikä napin contentissa, koska stretch contentpresenterissä ei laittanut tekstiä keskelle
+                            ja center taas loi napin käytettävyyden vain sisältönsä kohdalle-->
+                            <TextBlock Text="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <ContentPresenter  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content=""/>
+
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Stroke" TargetName="painike" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="FontWeight"  Value="Bold"/>
+                                <Setter Property="FontSize"  Value="30"/>
+                                <Setter Property="Visibility" TargetName="painike" Value="Hidden"/>
+                                <Setter Property="Visibility" TargetName="ulkoreuna" Value="Hidden"/>
+                                <Setter Property="Visibility" TargetName="sisareuna" Value="Hidden"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- datatemplate sivun listboxiin, jossa esitetään henkilötietoja halutulla tavalla-->
+        <DataTemplate DataType="{x:Type local:Henkilo}" x:Key="henkiloboksi">
+            <Border BorderThickness="4" BorderBrush="Firebrick"  Margin="3" Name="raja">
+                <StackPanel Margin="6" >
+                    <TextBlock Name="etu" Text="{Binding Path=Etunimi}"/>
+                    <TextBlock Name="suku" Text="{Binding Path=Sukunimi}"/>
+                    <TextBlock  Text="{Binding Path=Ika}" />
+                    <TextBlock  Text="{Binding Path=Kansallisuus}"/>
+                </StackPanel>
+            </Border>
+            <!-- tarpeelliset triggerit, hiiren leijumiselle sekä datatrigger värin vaihtamiseksi asuinmaan mukaan-->
+            <DataTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="FontWeight" Value="Bold" TargetName="etu" />
+                    <Setter Property="FontWeight" Value="Bold" TargetName="suku" />
+                </Trigger>
+
+                <DataTrigger Binding="{Binding Path=Kansallisuus}" Value="Australia">
+                    <Setter Property="Background" Value="Aqua" TargetName="raja" />
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding Path=Kansallisuus}" Value="USA">
+                    <Setter Property="Background" Value="Yellow" TargetName="raja" />
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding Path=Kansallisuus}" Value="Kanada">
+                    <Setter Property="Background" Value="DodgerBlue" TargetName="raja" />
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+    </Window.Resources>
+    <!--määritellään grid johon sjoitetaan sivun listboxi sekä toinen gridi johon asetetaan aakkosnappulat...-->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="4*" />
+
+        </Grid.ColumnDefinitions>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <ListBox BorderThickness="4" ItemsSource="{Binding ElementName=ikkuna, Path=Henkilot}" ItemTemplate="{StaticResource henkiloboksi}"/>
+        </ScrollViewer>
+        <Grid Grid.Column="1" Background="Bisque"  >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <ToggleButton Content="A"/>
+            <ToggleButton Grid.Column="1" Content="B"/>
+            <ToggleButton Grid.Column="2" Content="C"/>
+            <ToggleButton Grid.Column="3" Content="D"/>
+            <ToggleButton Grid.Column="4" Content="E"/>
+
+            <ToggleButton Grid.Row="1" Content="F"/>
+            <ToggleButton Grid.Row="1" Grid.Column="1" Content="G"/>
+            <ToggleButton Grid.Row="1" Grid.Column="2" Content="H"/>
+            <ToggleButton Grid.Row="1" Grid.Column="3" Content="I"/>
+            <ToggleButton Grid.Row="1" Grid.Column="4" Content="J"/>
+
+            <ToggleButton Grid.Row="2" Content="K"/>
+            <ToggleButton Grid.Row="2" Grid.Column="1" Content="L"/>
+            <ToggleButton Grid.Row="2" Grid.Column="2" Content="M"/>
+            <ToggleButton Grid.Row="2" Grid.Column="3" Content="N"/>
+            <ToggleButton Grid.Row="2" Grid.Column="4" Content="O"/>
+
+            <ToggleButton Grid.Row="3" Content="P"/>
+            <ToggleButton Grid.Row="3" Grid.Column="1" Content="Q"/>
+            <ToggleButton Grid.Row="3" Grid.Column="2" Content="R"/>
+            <ToggleButton Grid.Row="3" Grid.Column="3" Content="S"/>
+            <ToggleButton Grid.Row="3" Grid.Column="4" Content="T"/>
+
+            <ToggleButton Grid.Row="4" Content="U"/>
+            <ToggleButton Grid.Row="4" Grid.Column="1" Content="V"/>
+            <ToggleButton Grid.Row="4" Grid.Column="2" Content="W"/>
+            <ToggleButton Grid.Row="4" Grid.Column="3" Content="X"/>
+            <ToggleButton Grid.Row="4" Grid.Column="4" Content="Y"/>
+
+            <ToggleButton Grid.Row="5" Content="Z"/>
+            <ToggleButton Grid.Row="5" Grid.Column="1" Content="Å"/>
+            <ToggleButton Grid.Row="5" Grid.Column="2" Content="Ä"/>
+            <ToggleButton Grid.Row="5" Grid.Column="3" Content="Ö"/>
+            <ToggleButton Grid.Row="5" Grid.Column="4" Content="!"/>
+        </Grid>
+    </Grid>
+</Window>

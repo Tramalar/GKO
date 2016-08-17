@@ -1,0 +1,30 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+     xmlns:local="clr-namespace:Komposiitti"
+             xmlns:WpfControlLibrary2="clr-namespace:WpfControlLibrary2;assembly=WpfControlLibrary2" xmlns:AikaBoksi="clr-namespace:AikaBoksi;assembly=AikaBoksi" xmlns:NumeroBoksi="clr-namespace:NumeroBoksi;assembly=NumeroBoksi" x:Class="Komposiitti.Treenilaskuri"
+             x:Name="laskuri"
+             mc:Ignorable="d"
+    >
+    <UserControl.CommandBindings>
+        <CommandBinding Command="local:CustomCommands.Laske" CanExecute="LaskeCommand_CanExecute" Executed="LaskeCommand_Executed" />
+    </UserControl.CommandBindings>
+
+    <Grid>
+        <WrapPanel Background="Transparent">
+
+            <AikaBoksi:TimeTextBox Name="timebox" />
+            <Label Content="aika (hh:mm:ss)"/>
+            <NumeroBoksi:NumberTextBox Name="distancebox"/>
+            <Label Content="matka (km)"/>
+
+            <Button x:Name="laske" Content="Laske" Margin="20,5,20,5"  Command="local:CustomCommands.Laske"/>
+            <WpfControlLibrary2:UserControl1 x:Name="tahti" OverridesDefaultStyle="True"/>
+
+        </WrapPanel>
+
+    </Grid>
+
+</UserControl>

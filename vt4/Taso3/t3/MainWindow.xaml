@@ -1,0 +1,44 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:c="clr-namespace:vt4"
+    xmlns:Komposiitti="clr-namespace:Komposiitti;assembly=WpfControlLibrary1"
+    x:Class="vt4.MainWindow"
+        x:Name="ikkuna"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="787">
+
+    <!--komennot uuden laskurin luomiseksi-->
+        <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.New" CanExecute="newCanExecute" Executed="newExecuted" /> 
+        <CommandBinding Command="ApplicationCommands.Close"  Executed="closeExecuted" />
+    </Window.CommandBindings>
+
+    <!--menuvalikko jossa asetetaan New ja Close Valintaan vastaavat komennot-->
+        <Grid Margin="0,0,3.4,0.4">
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                    <MenuItem Header="File">
+                    <MenuItem Header="New"  Command="ApplicationCommands.New" />
+                    <MenuItem Header="Save"/>
+                    <MenuItem Header="Close" Command="ApplicationCommands.Close"/>
+                </MenuItem>
+            </Menu>
+
+            <!--nappi joka lisää ruudulle uuden laskurin-->
+                <Button Content="lisää" Margin="20,5,20,5" HorizontalAlignment="Left" Command="ApplicationCommands.New" VerticalAlignment="Top" />
+
+            <!--nappi jolla voidaan sulkea ohjelma-->
+                <Button Content="exit" Margin="20,5,20,5" HorizontalAlignment="Left" Command="ApplicationCommands.Close" VerticalAlignment="Top" />
+            <!--tehdään skrollailu mahdolliseksi ja luodaan stackpaneli johon lisätään laskureita-->
+                <ScrollViewer HorizontalScrollBarVisibility="Auto"  VerticalScrollBarVisibility="Auto" Margin="10,32,9.4,0.4"   >
+            <StackPanel x:Name="paneeli"  >
+                <Komposiitti:Treenilaskuri/>
+            </StackPanel>
+        </ScrollViewer>
+
+        </DockPanel>
+    </Grid>
+</Window>
