@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "t3", "t3\t3.csproj", "{03D4BDDE-757E-4480-9451-C8D252A3BEDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HorizontalBar", "HorizontalBar\HorizontalBar.csproj", "{A5B48FE2-8768-4C83-B9E9-42BCA71B3DAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rullailija", "Rullailija\Rullailija.csproj", "{865D746B-922F-4FB0-B1EB-436AD964E640}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03D4BDDE-757E-4480-9451-C8D252A3BEDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03D4BDDE-757E-4480-9451-C8D252A3BEDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03D4BDDE-757E-4480-9451-C8D252A3BEDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03D4BDDE-757E-4480-9451-C8D252A3BEDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5B48FE2-8768-4C83-B9E9-42BCA71B3DAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5B48FE2-8768-4C83-B9E9-42BCA71B3DAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5B48FE2-8768-4C83-B9E9-42BCA71B3DAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5B48FE2-8768-4C83-B9E9-42BCA71B3DAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{865D746B-922F-4FB0-B1EB-436AD964E640}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{865D746B-922F-4FB0-B1EB-436AD964E640}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{865D746B-922F-4FB0-B1EB-436AD964E640}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{865D746B-922F-4FB0-B1EB-436AD964E640}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
