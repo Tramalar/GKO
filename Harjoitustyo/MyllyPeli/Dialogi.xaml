@@ -1,0 +1,39 @@
+﻿<Window x:Class="MyllyPeli.Dialogi"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:ext="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyllyPeli"
+        mc:Ignorable="d"
+        Title="Settings" Height="350" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel >
+            <Label Content="Pelaajan 1 Nimi:" />
+            <TextBox Name="p1Nimi" HorizontalAlignment="Left" MinWidth="50" Margin="5"/>
+            <Label Content="Pelaajan 1 väri:" />
+            <ext:ColorPicker Name="valittuvari1" HorizontalAlignment="Left" MinWidth="50" Margin="5"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <Label Content="Pelaajan 2 Nimi:"/>
+            <TextBox Name="p2Nimi" HorizontalAlignment="Left" MinWidth="50" Margin="5"/>
+            <Label Content="Pelaajan 2 väri:" />
+            <ext:ColorPicker Name="valittuvari2" HorizontalAlignment="Left" MinWidth="50" Margin="5"/>
+            
+        </StackPanel>
+
+        <DockPanel FlowDirection="RightToLeft" Grid.Column="1" Grid.Row="1">
+            <Button Grid.Row="1" Margin="8" Height="30" Content="OK" Width="50"  Click="Button_Click"/>
+            <Button Grid.Row="1" Margin="8" Content="Cancel" Height="30" Width="55" Click="Button_Click_1" />
+        </DockPanel>
+
+    </Grid>
+</Window>

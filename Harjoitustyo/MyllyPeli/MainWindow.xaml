@@ -9,18 +9,35 @@
         Title="MainWindow" Height="350" Width="525" MinHeight="200" MinWidth="350" MouseLeftButtonUp="Window_MouseLeftButtonUp">
     <Window.CommandBindings>
         <CommandBinding Command="{x:Static local:MainWindow.Insert}" CanExecute="CanExecuteInsert" Executed="ExecutedInsert" />
-
+        <CommandBinding Command="{x:Static local:MainWindow.About}" CanExecute="CanExecuteAbout" Executed="ExecutedAbout" />
+        <CommandBinding Command="ApplicationCommands.Properties" CanExecute="Settings_CanExecute" Executed="Settings_Executed"/>
+        <CommandBinding Command="ApplicationCommands.New" CanExecute="New_CanExecute"  Executed="New_Executed"/>
+        <CommandBinding Command="ApplicationCommands.Help" CanExecute="Help_CanExecute"  Executed="Help_Executed"/>
     </Window.CommandBindings>
-    
-    <DockPanel Name="telakka">
+    <Window.Resources>
+    </Window.Resources>
+    <DockPanel >
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
                 <MenuItem Header="_Lisää" Command="{x:Static local:MainWindow.Insert}" />
+                <MenuItem Header="_New Game" Command="ApplicationCommands.New"/>
+            </MenuItem>
+            <MenuItem Header="Tools">
+                <MenuItem Header="Settings" Command="ApplicationCommands.Properties"/>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="H_elp" Command="ApplicationCommands.Help"/>
+                <MenuItem Header="_About" Command="{x:Static local:MainWindow.About}"/>
             </MenuItem>
         </Menu>
-        <Grid>
-            <omaAlue:Lauta Name="alue" Margin="184,0,10.4,10.4"/>
-
-    </Grid>
-        </DockPanel>
+        <Grid Name="ruudukko">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <omaAlue:Lauta Name="alue" Grid.Column="1"/>
+            <DockPanel Name="telakka">
+            </DockPanel>        
+        </Grid>
+    </DockPanel>
 </Window>

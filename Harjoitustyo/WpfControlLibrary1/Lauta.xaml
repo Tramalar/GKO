@@ -15,8 +15,8 @@
             <Setter Property="StrokeThickness" Value="5"/>
         </Style>
         <Style TargetType="PeliNappula:Nappula">
-            <Setter Property="Height" Value="{Binding Height, ElementName=proto}"/>
-            <Setter Property="Width" Value="{Binding Height, ElementName=proto}"/>
+            <Setter Property="Height" Value="{Binding Height, ElementName=elli1}"/>
+            <Setter Property="Width" Value="{Binding Height, ElementName=elli1}"/>
         </Style>
         <Style TargetType="{x:Type Ellipse}" >
             <Setter Property="Fill" Value="Black"/>
@@ -42,7 +42,7 @@
         </Style>
     </UserControl.Resources>
 
-    <Grid x:Name="ruudukko" MouseLeftButtonUp="alue_MouseDown">
+    <Grid x:Name="ruudukko">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -74,40 +74,33 @@
         <Line Style="{StaticResource verti}" Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center"  Grid.RowSpan="2" />
         <Line Style="{StaticResource verti}" Grid.Row="6" Grid.Column="4" />
 
-        <Ellipse  Name="proto" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-        <Ellipse  Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Column="7"/>
+        
+        <Ellipse  Name="elli1" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <Ellipse  Name="elli2" Grid.ColumnSpan="2" Grid.Row="4" />
+        <Ellipse  Name="elli3" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="7"/>
+        <Ellipse  Name="elli4" Grid.RowSpan="2" Grid.Row="7" Grid.Column="4"/>
+        <Ellipse  Name="elli5" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="7" Grid.Column="7"/>
+        <Ellipse  Name="elli6" Grid.ColumnSpan="2" Grid.Row="4" Grid.Column="7"/>
+        <Ellipse  Name="elli7" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Column="7"/>
+        <Ellipse  Name="elli8" Grid.RowSpan="2" Grid.Column="4"/>
+        
+        <Ellipse  Name="elli9" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="1" Grid.Column="1"/>
+        <Ellipse  Name="elli10" Grid.ColumnSpan="2" Grid.Row="4" Grid.Column="1"/>
+        <Ellipse  Name="elli11" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="6" Grid.Column="1"/>
+        <Ellipse  Name="elli12" Grid.RowSpan="2" Grid.Row="6" Grid.Column="4"/>
+        <Ellipse  Name="elli13" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="6" Grid.Column="6"/>
+        <Ellipse  Name="elli14" Grid.ColumnSpan="2" Grid.Row="4" Grid.Column="6"/>
+        <Ellipse  Name="elli15" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="1" Grid.Column="6"/>
+        <Ellipse  Name="elli16" Grid.RowSpan="2" Grid.Row="1" Grid.Column="4"/>
+        
+        <Ellipse  Name="elli17" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="2" Grid.Column="2"/>
+        <Ellipse  Name="elli18" Grid.ColumnSpan="2" Grid.Row="4" Grid.Column="2"/>
+        <Ellipse  Name="elli19" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="5" Grid.Column="2"/>
+        <Ellipse  Name="elli20" Grid.RowSpan="2" Grid.Row="5" Grid.Column="4"/>
+        <Ellipse  Name="elli21" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="5" Grid.Column="5"/>
+        <Ellipse  Name="elli22" Grid.ColumnSpan="2" Grid.Row="4" Grid.Column="5"/>
+        <Ellipse  Name="elli23" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="2" Grid.Column="5"/>     
+        <Ellipse  Name="elli24" Grid.RowSpan="2" Grid.Row="2" Grid.Column="4"/>
 
-        <Ellipse  Grid.ColumnSpan="2" Grid.Row="4"/>
-        <Ellipse  Grid.ColumnSpan="2" Grid.Row="4" Grid.Column="1"/>
-        <Ellipse  Grid.ColumnSpan="2" Grid.Row="4" Grid.Column="2"/>
-        <Ellipse  Grid.ColumnSpan="2" Grid.Row="4" Grid.Column="5"/>
-        <Ellipse  Grid.ColumnSpan="2" Grid.Row="4" Grid.Column="6"/>
-        <Ellipse  Grid.ColumnSpan="2" Grid.Row="4" Grid.Column="7"/>
-
-        <Ellipse  Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="1" Grid.Column="1"/>
-        <Ellipse  Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="1" Grid.Column="6"/>
-
-
-        <Ellipse  Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="6" Grid.Column="1"/>
-        <Ellipse  Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="6" Grid.Column="6"/>
-
-
-        <Ellipse  Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="5" Grid.Column="2"/>
-        <Ellipse  Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="5" Grid.Column="5"/>
-
-
-
-        <Ellipse  Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="2" Grid.Column="2"/>
-        <Ellipse  Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="2" Grid.Column="5"/>
-
-        <Ellipse  Grid.RowSpan="2" Grid.Column="4"/>
-        <Ellipse  Grid.RowSpan="2" Grid.Row="1" Grid.Column="4"/>
-        <Ellipse  Grid.RowSpan="2" Grid.Row="2" Grid.Column="4"/>
-        <Ellipse  Grid.RowSpan="2" Grid.Row="5" Grid.Column="4"/>
-        <Ellipse  Grid.RowSpan="2" Grid.Row="6" Grid.Column="4"/>
-        <Ellipse  Grid.RowSpan="2" Grid.Row="7" Grid.Column="4"/>
-
-        <Ellipse  Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="7"/>
-        <Ellipse  Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="7" Grid.Column="7"/>
     </Grid>
 </UserControl>

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Pelialue.Properties
+namespace Dialogi.Properties
 {
     
     
