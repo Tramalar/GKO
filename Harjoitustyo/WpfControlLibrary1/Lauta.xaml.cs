@@ -76,7 +76,7 @@ namespace Pelialue
 
         }
 
-        public void varjaa(bool v,Brush vari)
+        public void varjaa(bool v, Brush vari)
         {
             if (v) { p1Vari = vari; foreach (PeliNappula.Nappula n in p1Nappulat) n.Vari = vari; }
             else { p2Vari = vari; foreach (PeliNappula.Nappula n in p2Nappulat) n.Vari = vari; }
@@ -147,11 +147,11 @@ namespace Pelialue
         private String siirtoapu = "Siirrä nappulaa valitsemalla siirrettävä nappula ja painamalla sen jälkeen haluamaasi paikkaa";
         public TextBlock Helper = new TextBlock();
 
-        private bool peliohi=false;
+        private bool peliohi = false;
 
         private void Klikki(object sender, MouseButtonEventArgs e)
         {
-            if (poisto||peliohi) return;
+            if (poisto || peliohi) return;
             Ellipse elli;
             foreach (UIElement u in ruudukko.Children)
                 if (u is Ellipse) ((Ellipse)u).Fill = Brushes.Black;
@@ -264,11 +264,41 @@ namespace Pelialue
                         tarkistaVoitto(true);
                         pelaajan1Vuoro = !pelaajan1Vuoro;
                     }
+                    else
+                    {
+                        foreach (PeliNappula.Nappula n in p1Nappulat)
+                        {
+                            if (!tarkistaMylly(Grid.GetRow(n), Grid.GetColumn(n), p1Nappulat)) return;
+
+                        }
+                        ruudukko.Children.Remove(nappula);
+                        poistaVaratuista(nappula);
+                        p1Nappulat.Remove(nappula);
+                        poisto = false;
+                        if (lisaykset < 18) Helper.Text = lisaysapu; else Helper.Text = siirtoapu;
+                        tarkistaVoitto(true);
+                        pelaajan1Vuoro = !pelaajan1Vuoro;
+                    }
                 }
                 else if (pelaajan1Vuoro && p2Nappulat.Contains(nappula))
                 {
                     if (!tarkistaMylly(Grid.GetRow(nappula), Grid.GetColumn(nappula), p2Nappulat))
                     {
+                        ruudukko.Children.Remove(nappula);
+                        poistaVaratuista(nappula);
+                        p2Nappulat.Remove(nappula);
+                        poisto = false;
+                        if (lisaykset < 18) Helper.Text = lisaysapu; else Helper.Text = siirtoapu;
+                        tarkistaVoitto(true);
+                        pelaajan1Vuoro = !pelaajan1Vuoro;
+                    }
+                    else
+                    {
+                        foreach (PeliNappula.Nappula n in p2Nappulat)
+                        {
+                            if (!tarkistaMylly(Grid.GetRow(n), Grid.GetColumn(n), p2Nappulat)) return;
+
+                        }
                         ruudukko.Children.Remove(nappula);
                         poistaVaratuista(nappula);
                         p2Nappulat.Remove(nappula);
@@ -288,8 +318,8 @@ namespace Pelialue
         {
             if (v)
             {
-                if (lisaykset==18&&pelaajan1Vuoro && p2Nappulat.Count < 3) { Helper.Text = "Pelaaja 1 Voittaa";peliohi = true; SystemSounds.Beep.Play();  }
-                if (lisaykset==18&&!pelaajan1Vuoro && p1Nappulat.Count < 3) { Helper.Text = "Pelaaja 2 Voittaa"; peliohi = true; SystemSounds.Beep.Play(); }
+                if (lisaykset == 18 && pelaajan1Vuoro && p2Nappulat.Count < 3) { Helper.Text = "Pelaaja 1 Voittaa"; peliohi = true; SystemSounds.Beep.Play(); }
+                if (lisaykset == 18 && !pelaajan1Vuoro && p1Nappulat.Count < 3) { Helper.Text = "Pelaaja 2 Voittaa"; peliohi = true; SystemSounds.Beep.Play(); }
             }
             else
             {
@@ -297,14 +327,14 @@ namespace Pelialue
                 foreach (PeliNappula.Nappula p1Nap in p1Nappulat)
                     foreach (Ellipse e in NaapuriAttach.GetNaapuriOminaisuus(p1Nap))
                         if (!varatut.Contains(e)) { voitto = false; break; }
-                if (voitto) { Helper.Text = "Pelaaja 2 Voittaa";SystemSounds.Beep.Play(); peliohi = true; return;  }
+                if (voitto) { Helper.Text = "Pelaaja 2 Voittaa"; SystemSounds.Beep.Play(); peliohi = true; return; }
 
                 voitto = true;
                 foreach (PeliNappula.Nappula p2Nap in p2Nappulat)
                     foreach (Ellipse e in NaapuriAttach.GetNaapuriOminaisuus(p2Nap))
                         if (!varatut.Contains(e)) { voitto = false; break; }
 
-                if (voitto) { Helper.Text = "Pelaaja 1 Voittaa";SystemSounds.Beep.Play(); peliohi = true; return;  }
+                if (voitto) { Helper.Text = "Pelaaja 1 Voittaa"; SystemSounds.Beep.Play(); peliohi = true; return; }
             }
 
         }
