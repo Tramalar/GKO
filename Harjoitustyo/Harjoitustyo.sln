@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyllyPeli", "MyllyPeli\MyllyPeli.csproj", "{629AF90A-E4F8-44E2-B0FB-7806054A02BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pelialue", "WpfControlLibrary1\Pelialue.csproj", "{CED193F1-1586-4613-B283-B2F99DB1D0EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeliNappula", "PeliNappula\PeliNappula.csproj", "{EEAB7AD5-A0AC-4211-B64D-4B1BBCAD77CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{629AF90A-E4F8-44E2-B0FB-7806054A02BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{629AF90A-E4F8-44E2-B0FB-7806054A02BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{629AF90A-E4F8-44E2-B0FB-7806054A02BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{629AF90A-E4F8-44E2-B0FB-7806054A02BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CED193F1-1586-4613-B283-B2F99DB1D0EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CED193F1-1586-4613-B283-B2F99DB1D0EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CED193F1-1586-4613-B283-B2F99DB1D0EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CED193F1-1586-4613-B283-B2F99DB1D0EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEAB7AD5-A0AC-4211-B64D-4B1BBCAD77CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEAB7AD5-A0AC-4211-B64D-4B1BBCAD77CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEAB7AD5-A0AC-4211-B64D-4B1BBCAD77CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEAB7AD5-A0AC-4211-B64D-4B1BBCAD77CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

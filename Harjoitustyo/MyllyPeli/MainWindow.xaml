@@ -1,0 +1,26 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyllyPeli"
+        xmlns:omaAlue="clr-namespace:Pelialue;assembly=WpfControlLibrary1" xmlns:PeliNappula="clr-namespace:PeliNappula;assembly=PeliNappula" x:Class="MyllyPeli.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" MinHeight="200" MinWidth="350" MouseLeftButtonUp="Window_MouseLeftButtonUp">
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static local:MainWindow.Insert}" CanExecute="CanExecuteInsert" Executed="ExecutedInsert" />
+
+    </Window.CommandBindings>
+    
+    <DockPanel Name="telakka">
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="_Lisää" Command="{x:Static local:MainWindow.Insert}" />
+            </MenuItem>
+        </Menu>
+        <Grid>
+            <omaAlue:Lauta Name="alue" Margin="184,0,10.4,10.4"/>
+
+    </Grid>
+        </DockPanel>
+</Window>
