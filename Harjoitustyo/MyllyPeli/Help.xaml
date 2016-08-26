@@ -13,6 +13,7 @@
         </Grid.ColumnDefinitions>
         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
             <ListBox>
+                <!--helpin sisältämät tiedot, asetetaan selectediin käsittelijä joka vaihtaa tekstiä sen mukaan mikä listboxitemeistä on valittuna-->
                 <ListBoxItem Content="Lisääminen" Selected="ListBoxItem_Selected"/>
                 <ListBoxItem Content="Siirrot" Selected="ListBoxItem_Selected_1"/>
                 <ListBoxItem Content="Poistaminen" Selected="ListBoxItem_Selected_2"/>

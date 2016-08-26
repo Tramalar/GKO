@@ -7,30 +7,32 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300" Name="nappu">
 
-    <UserControl.Resources>
-        <Style TargetType="ToggleButton">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ToggleButton}">
-                        <Grid>
-                            <Ellipse Stroke="Black" StrokeThickness="2" Fill="{Binding Vari ,ElementName=nappu}" x:Name="painike"/>
-                           
-                            <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                            <ContentPresenter  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content=""/>
-
-                        </Grid>
-
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsChecked" Value="True">
-                                <Setter Property="StrokeThickness" TargetName="painike" Value="4"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </UserControl.Resources>
     <Grid>
-        <ToggleButton PreviewMouseDown="nappula_MouseDown" Name="nappula"/>
+        <!--Togglebutton joka toimii pelinappulanamme, asetetaan tyyli nappulamaisemmaksi-->
+        <ToggleButton PreviewMouseDown="nappula_MouseDown" Name="nappula">
+            <ToggleButton.Style>
+                <Style TargetType="ToggleButton">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ToggleButton}">
+                                <Grid>
+                                    <Ellipse Stroke="Black" StrokeThickness="2" Fill="{Binding Vari ,ElementName=nappu}" x:Name="painike"/>
+
+                                    <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    <ContentPresenter  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content=""/>
+
+                                </Grid>
+
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsChecked" Value="True">
+                                        <Setter Property="StrokeThickness" TargetName="painike" Value="4"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ToggleButton.Style>
+        </ToggleButton>
     </Grid>
 </UserControl>

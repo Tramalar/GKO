@@ -22,7 +22,11 @@ namespace MyllyPeli
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// asetetaan textblockin teksti valittuna olevan listboxitemin mukaan
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ListBoxItem_Selected(object sender, RoutedEventArgs e)
         {
             tiedot.Text = "Lisää nappuloita ruudulle valitsemalla lisää, joko file-menusta tai painamalla näppäin yhdistelmää ctrl+D, Tämän jälkeen paina haluamaasi ympyrää pelikentällä ja nappulasi ilmestyy siihen.";

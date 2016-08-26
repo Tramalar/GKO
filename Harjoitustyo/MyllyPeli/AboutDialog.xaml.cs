@@ -20,6 +20,9 @@ namespace MyllyPeli
     /// </summary>
     public partial class AboutDialog : Window
     {
+        /// <summary>
+        /// hakee versio numeron ja alustaa dialogin
+        /// </summary>
         public AboutDialog()
         {
             string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();

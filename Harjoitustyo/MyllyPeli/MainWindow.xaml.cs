@@ -11,6 +11,9 @@ namespace MyllyPeli
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// lisätään alueen sisältämät pelaaja-labelit sekä avustusteksti ikkunan vasempaan laitaan
+        /// </summary>
         public MainWindow()
         {
             Insert.InputGestures.Add(new KeyGesture(Key.D, ModifierKeys.Control));
@@ -25,38 +28,74 @@ namespace MyllyPeli
             DockPanel.SetDock(alue.Helper, Dock.Top);
             telakka.Children.Add(alue.Helper);
         }
-
+        /// <summary>
+        /// about-dialogin avaamiseen tarkoitettu komento
+        /// </summary>
         public static RoutedCommand About = new RoutedCommand();
+        /// <summary>
+        /// lisäykseen tarvittava komento
+        /// </summary>
         public static RoutedCommand Insert = new RoutedCommand();
 
+        /// <summary>
+        /// aina suoritettavissa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CanExecuteAbout(object sender, CanExecuteRoutedEventArgs e)
         {
             e.CanExecute = true;
         }
-
+        /// <summary>
+        /// avaa about-dialogin
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ExecutedAbout(object sender, ExecutedRoutedEventArgs e)
         {
             AboutDialog dialog = new AboutDialog();
             dialog.ShowDialog();
         }
 
-
+        /// <summary>
+        /// asettaa lisäys-operaation voimaan, odotellaan että laudalla lisätään nappula
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ExecutedInsert(object sender, ExecutedRoutedEventArgs e) {
             alue.plisaysmenossa=true ;
         }
-
+        /// <summary>
+        /// jos alueella on menossa poisto tai lisäys ei sallita uusia lisäyksiä
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CanExecuteInsert(object sender, CanExecuteRoutedEventArgs e) { e.CanExecute = !(alue.plisaysmenossa||alue.poisto); }
 
+        /// <summary>
+        /// jos klikataan ruutua muualla kuin peliruuduissa poistetaan valinta kaikista ruuduista ja siirrytään pois lisäystilasta jos lisättävää vielä on
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Window_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             alue.hutiClick();
         }
-
+        /// <summary>
+        /// settings voidaan suorittaa aina
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Settings_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
             e.CanExecute = true;
         }
-
+        /// <summary>
+        /// avaa settings-dialogin, mikäli dialogissa painetaan OK asetetaan pelaajien nimet ja värit asetusten mukaiseksi
+        /// Cancelia painettaessa ei tehdä mitään
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Settings_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             Dialogi asetukset = new Dialogi();
@@ -71,12 +110,22 @@ namespace MyllyPeli
             
             if (asetukset.DialogResult == false) return;
         }
-
+        /// <summary>
+        /// aina suoritettavissa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void New_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
             e.CanExecute = true;
         }        
                  
+        /// <summary>
+        /// poistetaan vanha pelilauta
+        /// alustetaan uusi peli kopioiden tiedot jotka tarvitsee kopioida
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void New_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             ruudukko.Children.Remove(alue);
@@ -89,17 +138,27 @@ namespace MyllyPeli
             DockPanel.SetDock(alue.p1, Dock.Top);
             telakka.Children.Add(alue.p1);
             DockPanel.SetDock(alue.p2, Dock.Top);
+            alue.varjaa(true, tempvari1);alue.varjaa(false,tempvari2);
             telakka.Children.Add(alue.p2);
-            alue.p2Vari = tempvari2;alue.p1Vari = tempvari1;
 
             telakka.Children.Add(alue.Helper);
             ruudukko.Children.Add(alue);
         }
+        /// <summary>
+        /// voi suorittaa aina
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Help_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
             e.CanExecute = true;
         }
 
+        /// <summary>
+        /// avaa help dialogin
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Help_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             Help help = new Help();

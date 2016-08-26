@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyllyPeli"
         mc:Ignorable="d"
-        Title="About: Mylly" Height="300" Width="300">
+        Title="About: Mylly" Height="242.763" Width="265.461">
     <StackPanel>
+        <!--tarpeelliset tiedot-->
         <Label Content="tuote: Mylly"/>
         <Label Content="tekijä: Visa Nykänen" />
         <Label Content="päiväys: 25.06.2016"/>
