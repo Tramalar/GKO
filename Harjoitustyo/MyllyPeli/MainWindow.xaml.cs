@@ -20,7 +20,7 @@ namespace MyllyPeli
            
             InitializeComponent();
             alue.p1.Content = "pelaaja1"; alue.p2.Content = "pelaaja2";
-
+            alue.p1.Background = alue.p1Vari;alue.p2.Background = alue.p2Vari;
             DockPanel.SetDock(alue.p1, Dock.Top);
             telakka.Children.Add(alue.p1);
             DockPanel.SetDock(alue.p2, Dock.Top);

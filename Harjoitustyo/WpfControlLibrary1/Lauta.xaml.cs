@@ -325,7 +325,7 @@ namespace Pelialue
                 return;
             }
             //tarkistetaan saatiinko aikaan jumitusvoitto
-            tarkistaVoitto(false);
+            tarkistaVoitto();
             pelaajan1Vuoro = !pelaajan1Vuoro;
         }
 
@@ -410,7 +410,7 @@ namespace Pelialue
             else p1Nappulat.Remove(nappula);
             poisto = false;
             if (lisaykset < 18) Helper.Text = lisaysapu; else Helper.Text = siirtoapu;
-            tarkistaVoitto(true);
+            tarkistaVoitto();
             pelaajan1Vuoro = !pelaajan1Vuoro;
         }
         /// <summary>
@@ -423,16 +423,11 @@ namespace Pelialue
         /// jos kutsutaan poiston jälkeen tarkistetaan onko vastapelaajalla alle 3 nappulaa ja ilmoitetaan voitosta jos näin on
         /// jos kutsutaan siirron jälkeen tarkistetaan onko vastapelaajalla mahdollisia siirtoja, jos ei, ilmoitetaan voitosta
         /// </summary>
-        /// <param name="OnkoNormaaliVoitto"></param>
-        private void tarkistaVoitto(bool OnkoNormaaliVoitto)
+        private void tarkistaVoitto()
         {
-            if (OnkoNormaaliVoitto)
-            {
-                if (lisaykset == 18 && pelaajan1Vuoro && p2Nappulat.Count < 3) { Helper.Text = "Pelaaja 1 Voittaa!"; peliohi = true; SystemSounds.Beep.Play(); }
-                if (lisaykset == 18 && !pelaajan1Vuoro && p1Nappulat.Count < 3) { Helper.Text = "Pelaaja 2 Voittaa!"; peliohi = true; SystemSounds.Beep.Play(); }
-            }
-            else
-            {
+                if (lisaykset == 18 && pelaajan1Vuoro && p2Nappulat.Count < 3) { Helper.Text = "Pelaaja 1 Voittaa!"; peliohi = true; SystemSounds.Beep.Play(); return; }
+                if (lisaykset == 18 && !pelaajan1Vuoro && p1Nappulat.Count < 3) { Helper.Text = "Pelaaja 2 Voittaa!"; peliohi = true; SystemSounds.Beep.Play();  return; }
+
                 bool voitto = true;
                 //mikäli jokin peliruutu joka sijaitsee jonkin pelaajan nappulan vieressä ei ole varatuissa
                 //on pelaajalla jäljellä mahdollisia siirtoja, joten tällöin ei tule voittoa
@@ -448,8 +443,7 @@ namespace Pelialue
                         if (!varatut.Contains(e)) { voitto = false; break; }
 
                 if (voitto) { Helper.Text = "Pelaaja 1 Voittaa!"; SystemSounds.Beep.Play(); peliohi = true; return; }
-            }
-
+            
         }
 
         /// <summary>
@@ -518,9 +512,12 @@ namespace Pelialue
         /// <returns> valittuna oleva nappula, null jos ketään ei ole valittuna</returns>
         public PeliNappula.Nappula getCheckedNappula()
         {
-            foreach (UIElement nap in ruudukko.Children)
-                if (nap is PeliNappula.Nappula)
+            foreach (PeliNappula.Nappula nap in p1Nappulat)
                     if (((PeliNappula.Nappula)nap).getChecked()) return (PeliNappula.Nappula)nap;
+
+            foreach (PeliNappula.Nappula nap in p2Nappulat)
+                if (((PeliNappula.Nappula)nap).getChecked()) return (PeliNappula.Nappula)nap;
+
             return null;
         }
 
@@ -530,7 +527,9 @@ namespace Pelialue
         public void hutiClick()
         {
             if (lisaykset < 18) plisaysmenossa = false;
-            foreach (UIElement nap in ruudukko.Children)
+            foreach (PeliNappula.Nappula nap in p1Nappulat)
+                if (nap is PeliNappula.Nappula) ((PeliNappula.Nappula)nap).Uncheck();
+            foreach (PeliNappula.Nappula nap in p2Nappulat)
                 if (nap is PeliNappula.Nappula) ((PeliNappula.Nappula)nap).Uncheck();
         }
     }
